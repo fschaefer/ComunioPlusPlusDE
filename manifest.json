@@ -1,0 +1,20 @@
+{
+  "name": "ComunioPlusPlus DE",
+  "version": "1.0.0",
+  "description": "Extending the comunio.de basic player account. ;)",
+  "permissions": [
+    "*://www.transfermarkt.de/*",
+    "*://stats.comunio.de/*"
+  ],
+  "icons": {
+    "48" : "monkey-48.png",
+    "128" : "monkey-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.comunio.de/*"],
+      "css": ["main.css"],
+      "js" : ["jquery.min.js", "main.js"]
+    }
+  ]
+}

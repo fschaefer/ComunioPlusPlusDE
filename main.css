@@ -1,0 +1,42 @@
+img.trend {
+    height: 25px;
+    width: 25px;
+}
+img.trend_-5 {
+    background-position: 0 -25px;
+}
+img.trend_-4 {
+    background-position: 0 -50px;
+}
+img.trend_-3 {
+    background-position: 0 -75px;
+}
+img.trend_-2 {
+    background-position: 0 -100px;
+}
+img.trend_-1 {
+    background-position: 0 -125px;
+}
+img.trend_0 {
+    background-position: 0 -150px;
+}
+img.trend_1 {
+    background-position: 0 -175px;
+}
+img.trend_2 {
+    background-position: 0 -200px;
+}
+img.trend_3 {
+    background-position: 0 -225px;
+}
+img.trend_4 {
+    background-position: 0 -250px;
+}
+img.trend_5 {
+    background-position: 0 -275px;
+}
+
+#calculation {
+    text-align: right;
+    padding: 10px;
+}
