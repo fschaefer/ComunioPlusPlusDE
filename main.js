@@ -88,8 +88,6 @@ function forEachPlayer(callback) {
         var $tr = $(this),
             name = $(this).find('td:eq(0)').text().replace(/[\*\s]/g, ""),    /* player name */
             club = $(this).find('span.clubimg').attr("title");    /* club name */
-			console.log("name"+name);
-			console.log("club"+club);
         callback($tr, name, club);
     });
 }
