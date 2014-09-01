@@ -1,4 +1,5 @@
 {
+  "manifest_version": 2,
   "name": "ComunioPlusPlus DE",
   "version": "1.0.0",
   "description": "Extending the comunio.de basic player account. ;)",
@@ -16,5 +17,7 @@
       "css": ["main.css"],
       "js" : ["jquery.min.js", "main.js"]
     }
-  ]
+  ],
+  "web_accessible_resources": ["images/trends.png", "images/redcross.gif"]
+  
 }

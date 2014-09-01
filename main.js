@@ -69,10 +69,9 @@ function addStats($targetTr, name, club) {
     get([
         'http://stats.comunio.de/search.php?name=' + name
     ], function (data) {
-        var $tr = $(data[0]).find('table tr td:contains("' + name + '")').closest('tr').find('img[title="' + club + '"]').closest('tr'),
+        var $tr = $(data[0]).find('table tr td a:contains("' + name + '")').closest('tr').find('img[title="' + club + '"]').closest('tr'),
             $img = $tr.find('td img.trend').clone(),
             $td = $('<td/>', { 'align': 'center', 'css': { 'width': '24px' } }).appendTo($targetTr);
-        
         $img.css({
             'background-image': "url(" + chrome.extension.getURL('/images/trends.png') + ")"
         })
@@ -87,9 +86,8 @@ function forEachPlayer(callback) {
     ].join(','))
     .each(function () {
         var $tr = $(this),
-            name = $(this).find('td:eq(0)').text(),    /* player name */
-            club = $(this).find('td:eq(1)').text();    /* club name */
-
+            name = $(this).find('td:eq(0)').text().replace(/[\*\s]/g, ""),    /* player name */
+            club = $(this).find('span.clubimg').attr("title");    /* club name */
         callback($tr, name, club);
     });
 }
@@ -147,9 +145,9 @@ var currentLocation = document.location.href;
 
 if ( currentLocation.match("http://www.comunio.de/lineup.phtml")
   || currentLocation.match("http://www.comunio.de/exchangemarket.phtml") ) {
-
+	  
     get([
-        'http://www.transfermarkt.de/de/1-bundesliga/verletzt/wettbewerb_L1.html'
+        'http://www.transfermarkt.de/1-bundesliga/verletztespieler/wettbewerb/L1'
     ], function (injuryData) {
         forEachPlayer(function ($tr, name, club) {
             addInjury($tr, injuryData[0], normalizeName(name), club, function () {
